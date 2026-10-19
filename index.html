@@ -46,14 +46,14 @@
         <section>
             <div class="showcase-title">Core Projects</div>
             
-            <!-- Portfolio Showcase Filtering - Moved here below title -->
+            <!-- Portfolio Showcase & Filtering placed underneath the title header -->
             <div class="filter-terminal">
                 <button class="filter-btn active" onclick="filterSelection('all')">ALL</button>
                 <button class="filter-btn" onclick="filterSelection('shaders')">SHADERS / TECH ART</button>
                 <button class="filter-btn" onclick="filterSelection('gameplay')">GAMEPLAY CODE</button>
             </div>
 
-            <!-- Arcade Grid with Side-by-Side Thumbnail Layout support -->
+            <!-- Arcade Grid view layout -->
             <div class="arcade-grid">
                 <div class="arcade-card filter-item shaders">
                     <div class="gif-thumbnail">
@@ -90,7 +90,7 @@
             </div>
         </section>
 
-        <!-- Game Jam Archive Section -->
+        <!-- Game Jam Archive System Row -->
         <section>
             <div class="showcase-title" style="color: #8d36f0;">Game Jam Archive</div>
             <div class="arcade-grid">
@@ -122,6 +122,7 @@
             © 2026 DANIELLE MACHLUF • POWERED VIA GITHUB PAGES SYSTEM
         </footer>
     </div>
+    
     <script>
         function filterSelection(c) {
             var x = document.getElementsByClassName("filter-item");
@@ -135,7 +136,7 @@
         }
         filterSelection("all");
 
-        // Add Active Highlight State to sorting buttons
+        // Highlights the clicked button
         var btnContainer = document.querySelector(".filter-terminal");
         var btns = btnContainer.getElementsByClassName("filter-btn");
         for (var i = 0; i < btns.length; i++) {
