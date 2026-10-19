@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danielle Machluf | Portfolio</title>
     <style>
-        /* Immersive Y2K Dark Grid Base */
+        /* Immersive Cyber-Purple Notebook Base */
         body {
-            background-color: #0d0d11;
+            background-color: #0b0914;
             background-image: 
-                linear-gradient(rgba(255, 0, 122, 0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 0, 122, 0.08) 1px, transparent 1px);
+                linear-gradient(rgba(141, 54, 240, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(141, 54, 240, 0.08) 1px, transparent 1px);
             background-size: 25px 25px;
             color: #e4e4e7;
             font-family: 'Courier New', Courier, monospace;
@@ -30,7 +30,7 @@
         header {
             position: relative;
             margin-bottom: 50px;
-            border-bottom: 4px dashed #ff007a;
+            border-bottom: 4px dashed #8d36f0;
             padding-bottom: 20px;
         }
 
@@ -42,7 +42,7 @@
             margin: 0;
             line-height: 0.9;
             letter-spacing: -1px;
-            text-shadow: 4px 4px 0px #ff007a, -3px -3px 0px #00ffff;
+            text-shadow: 4px 4px 0px #8d36f0, -3px -3px 0px #00ffff;
         }
 
         .subtitle {
@@ -59,32 +59,31 @@
             box-shadow: 4px 4px 0px #000;
         }
 
-        /* The Ring-Binder Notebook Frame Layout */
+        /* The Ring-Binder Notebook Layout - Fixed Overflow */
         .notebook-wrapper {
             display: grid;
             grid-template-columns: 40px 1fr 1fr;
             gap: 0;
-            background: #14141c;
+            background: #12101e;
             border: 4px solid #000;
-            box-shadow: 12px 12px 0px #ff007a;
+            box-shadow: 12px 12px 0px #8d36f0;
             border-radius: 8px;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
             position: relative;
-            overflow: hidden;
         }
 
         @media (max-width: 768px) {
             .notebook-wrapper { 
                 grid-template-columns: 1fr;
-                box-shadow: 8px 8px 0px #ff007a;
+                box-shadow: 8px 8px 0px #8d36f0;
             }
             .binder-spine { display: none; }
         }
 
         /* Heavy Vertical Metal Binder Spine */
         .binder-spine {
-            background: #1c1c24;
-            border-right: 3px double #ff007a;
+            background: #17142b;
+            border-right: 3px double #8d36f0;
             display: flex;
             flex-direction: column;
             justify-content: space-around;
@@ -95,7 +94,7 @@
         .binder-hole {
             width: 16px;
             height: 16px;
-            background: #0d0d11;
+            background: #0b0914;
             border: 2px solid #00ffff;
             border-radius: 50%;
             box-shadow: inset 2px 2px 0px #000;
@@ -103,38 +102,40 @@
 
         /* Inner Journal Columns */
         .journal-column {
-            padding: 40px 30px;
-            background: #14141c;
+            padding: 50px 30px 40px 30px; /* Added top padding to prevent badge cutoff */
+            background: #12101e;
+            position: relative;
         }
 
         .journal-column:nth-child(3) {
-            border-left: 2px dashed rgba(255, 0, 122, 0.3);
-            background: #181822;
+            border-left: 2px dashed rgba(141, 54, 240, 0.3);
+            background: #161326;
         }
 
         h2 {
             font-family: 'Impact', sans-serif;
-            color: #ff007a;
+            color: #8d36f0;
             font-size: 2rem;
             text-transform: uppercase;
             margin-top: 0;
             letter-spacing: 1px;
         }
 
-        /* Floating Sticker / Badge elements */
+        /* Floating Sticker / Badge elements - Fixed Cutoff Context */
         .sticker-badge {
             position: absolute;
-            top: -20px;
+            top: -15px;
             right: 20px;
-            background: #ff007a;
+            background: #8d36f0;
             color: #fff;
             padding: 5px 15px;
             font-family: 'Arial Black', sans-serif;
             font-size: 0.8rem;
             text-transform: uppercase;
-            transform: rotate(5deg);
+            transform: rotate(4deg);
             border: 2px solid #000;
             box-shadow: 3px 3px 0px #000;
+            z-index: 10;
         }
 
         /* Neo-Brutalist Arcade Grid Cards */
@@ -151,36 +152,60 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px;
+            margin-bottom: 60px;
         }
 
         .arcade-card {
-            background: #181822;
+            background: #141224;
             border: 3px solid #000;
             box-shadow: 6px 6px 0px #00ffff;
-            padding: 25px;
+            padding: 0; /* Clear padding to align the thumbnail flush */
+            overflow: hidden;
             position: relative;
             transition: all 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
         }
 
         .arcade-card:hover {
             transform: translate(-4px, -4px);
-            box-shadow: 10px 10px 0px #ff007a;
-            border-color: #ff007a;
+            box-shadow: 10px 10px 0px #8d36f0;
+            border-color: #8d36f0;
+        }
+
+        /* GIF Thumbnail Containers */
+        .gif-thumbnail {
+            width: 100%;
+            height: 160px;
+            background: #231e3d;
+            border-bottom: 3px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .gif-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
         }
 
         .arcade-card h3 {
             font-family: 'Arial Black', sans-serif;
             color: #fff;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #ff007a;
+            font-size: 1.1rem;
+            margin: 0 0 10px 0;
+            border-bottom: 2px solid #8d36f0;
             padding-bottom: 5px;
         }
 
         /* Heavy Interaction Buttons */
         .brutal-btn {
             display: inline-block;
-            background: #ff007a;
+            background: #8d36f0;
             color: #fff;
             padding: 12px 24px;
             text-transform: uppercase;
@@ -196,7 +221,7 @@
         .brutal-btn:hover {
             background: #00ffff;
             color: #000;
-            box-shadow: 4px 4px 0px #ff007a;
+            box-shadow: 4px 4px 0px #8d36f0;
         }
 
         .link-accent {
@@ -204,14 +229,14 @@
             text-decoration: none;
             font-weight: bold;
         }
-        .link-accent:hover { text-decoration: underline; color: #ff007a; }
+        .link-accent:hover { text-decoration: underline; color: #8d36f0; }
 
         footer {
             margin-top: 80px;
             text-align: center;
             font-size: 0.75rem;
-            color: #52525b;
-            border-top: 2px dashed #1c1c24;
+            color: #4b4473;
+            border-top: 2px dashed #17142b;
             padding-top: 20px;
         }
     </style>
@@ -254,45 +279,29 @@
                 <p><strong>Runtimes:</strong> Unity // Unreal Engine</p>
                 <p><strong>Technical Art:</strong> HLSL, Shader Graph, Custom Render Passes, VFX Graph</p>
                 <p><strong>Codebases:</strong> C#, C++, Python</p>
-                <hr style="border: 1px dashed rgba(255,0,122,0.2); margin: 20px 0;">
+                <hr style="border: 1px dashed rgba(141, 54, 240, 0.2); margin: 20px 0;">
                 <p>🛰️ Hub: <a href="#" target="_blank" class="link-accent">Itch.io Profile</a></p>
                 <p>✉️ Comms: <a href="mailto:your-email@domain.com" class="link-accent">Direct Mail</a></p>
             </div>
 
         </div>
 
-        <!-- System Showcase Content Grid -->
+        <!-- Selected Core Projects Showcase Section -->
         <section>
             <div class="showcase-title">// Core_Projects</div>
             
             <div class="arcade-grid">
                 
                 <div class="arcade-card">
-                    <h3>The Secrets Of The Hollow Woods</h3>
-                    <p>Atmospheric system tracking complex screen-space post-processing layers and custom vertex displacement fields for interactive environments.</p>
-                    <a href="#" class="link-accent">View Project &rarr;</a>
+                    <div class="gif-thumbnail">
+                        <!-- Replace src path with your local game gif pathway -->
+                        <img src="assets/hollow-woods.gif" alt="Hollow Woods Gameplay Preview">
+                    </div>
+                    <div class="card-content">
+                        <h3>The Secrets Of The Hollow Woods</h3>
+                        <p>Atmospheric system tracking screen-space post-processing layers and custom vertex displacement fields.</p>
+                        <a href="#" class="link-accent">View Project &rarr;</a>
+                    </div>
                 </div>
 
                 <div class="arcade-card">
-                    <h3>SkyBloom</h3>
-                    <p>Stylized physics flight array managing complex procedural cloud rendering buffers and particle array matrix variations.</p>
-                    <a href="#" class="link-accent">View Project &rarr;</a>
-                </div>
-
-                <div class="arcade-card">
-                    <h3>Sweet Escape</h3>
-                    <p>Neon toon platformer logic featuring explicit custom outline shaders, look-up texture color tracking, and physical surface materials.</p>
-                    <a href="#" class="link-accent">View Project &rarr;</a>
-                </div>
-
-            </div>
-        </section>
-
-        <footer>
-            © 2026 DANIELLE MACHLUF • DESIGNED VIA GITHUB PAGES
-        </footer>
-
-    </div>
-
-</body>
-</html>
