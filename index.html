@@ -5,147 +5,214 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danielle Machluf | Portfolio</title>
     <style>
-        /* Base Styling & Theme (Y2K Cyber Notebook) */
+        /* Immersive Y2K Dark Grid Base */
         body {
-            background-color: #121214;
+            background-color: #0d0d11;
             background-image: 
-                linear-gradient(rgba(255, 0, 122, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 0, 122, 0.05) 1px, transparent 1px);
-            background-size: 20px 20px; /* Notebook grid pattern */
+                linear-gradient(rgba(255, 0, 122, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 0, 122, 0.08) 1px, transparent 1px);
+            background-size: 25px 25px;
             color: #e4e4e7;
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
-            padding: 40px 20px;
+            padding: 50px 20px;
             display: flex;
             justify-content: center;
         }
 
         .portfolio-container {
-            max-width: 900px;
+            max-width: 950px;
             width: 100%;
-        }
-
-        /* Typography */
-        h1, h2, h3 {
-            font-family: 'Impact', 'Arial Black', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 0;
-        }
-
-        h1 {
-            font-size: 3rem;
-            color: #ff007a;
-            text-shadow: 3px 3px 0px #00ffff; /* Cyber glitch shadow effect */
-            margin-bottom: 5px;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            color: #00ffff;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-        }
-
-        /* Main Structural Split Layout */
-        .main-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
-        }
-
-        @media (max-width: 768px) {
-            .main-layout { grid-template-columns: 1fr; }
-        }
-
-        /* Stickers & Card Blocks (Neo-brutalist notebook cards) */
-        .card {
-            background: #1a1a24;
-            border: 3px solid #ff007a;
-            box-shadow: 6px 6px 0px #000;
-            padding: 25px;
-            border-radius: 4px;
             position: relative;
         }
 
-        /* Cute decorative binder holes on the side */
-        .notebook-card::before {
-            content: "•••";
-            position: absolute;
-            left: 15px;
-            top: 10px;
-            color: #00ffff;
-            letter-spacing: 5px;
-            font-size: 20px;
+        /* Glitch Asymmetric Brutalist Headers */
+        header {
+            position: relative;
+            margin-bottom: 50px;
+            border-bottom: 4px dashed #ff007a;
+            padding-bottom: 20px;
         }
 
-        .notebook-card {
-            padding-top: 35px;
+        h1 {
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            font-size: 4rem;
+            text-transform: uppercase;
+            color: #fff;
+            margin: 0;
+            line-height: 0.9;
+            letter-spacing: -1px;
+            text-shadow: 4px 4px 0px #ff007a, -3px -3px 0px #00ffff;
         }
 
-        /* Project Display Grid */
-        .projects-grid {
+        .subtitle {
+            display: inline-block;
+            background: #00ffff;
+            color: #000;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            margin-top: 15px;
+            font-weight: 900;
+            transform: rotate(-1.5deg);
+            box-shadow: 4px 4px 0px #000;
+        }
+
+        /* The Ring-Binder Notebook Frame Layout */
+        .notebook-wrapper {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: 40px 1fr 1fr;
+            gap: 0;
+            background: #14141c;
+            border: 4px solid #000;
+            box-shadow: 12px 12px 0px #ff007a;
+            border-radius: 8px;
+            margin-bottom: 50px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .project-card {
-            background: #1a1a24;
-            border: 3px solid #e4e4e7;
-            box-shadow: 6px 6px 0px #ff007a;
-            padding: 20px;
-            transition: all 0.15s ease-in-out;
-            cursor: pointer;
+        @media (max-width: 768px) {
+            .notebook-wrapper { 
+                grid-template-columns: 1fr;
+                box-shadow: 8px 8px 0px #ff007a;
+            }
+            .binder-spine { display: none; }
         }
 
-        .project-card:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 9px 9px 0px #00ffff;
-            border-color: #00ffff;
+        /* Heavy Vertical Metal Binder Spine (From Image 2) */
+        .binder-spine {
+            background: #1c1c24;
+            border-right: 3px double #ff007a;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding: 30px 0;
         }
 
-        .project-card h3 {
+        .binder-hole {
+            width: 16px;
+            height: 16px;
+            background: #0d0d11;
+            border: 2px solid #00ffff;
+            border-radius: 50%;
+            box-shadow: inset 2px 2px 0px #000;
+        }
+
+        /* Inner Journal Columns */
+        .journal-column {
+            padding: 40px 30px;
+            background: #14141c;
+        }
+
+        .journal-column:nth-child(3) {
+            border-left: 2px dashed rgba(255, 0, 122, 0.3);
+            background: #181822;
+        }
+
+        h2 {
+            font-family: 'Impact', sans-serif;
             color: #ff007a;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
+            font-size: 2rem;
+            text-transform: uppercase;
+            margin-top: 0;
+            letter-spacing: 1px;
         }
 
-        /* Interactive Elements & Buttons */
-        .btn {
+        /* Floating Sticker / Badge elements */
+        .sticker-badge {
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            background: #ff007a;
+            color: #fff;
+            padding: 5px 15px;
+            font-family: 'Arial Black', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            transform: rotate(5deg);
+            border: 2px solid #000;
+            box-shadow: 3px 3px 0px #000;
+        }
+
+        /* Neo-Brutalist Arcade Grid Cards (From Image 1 & johno.re) */
+        .showcase-title {
+            font-family: 'Impact', sans-serif;
+            font-size: 2.5rem;
+            color: #00ffff;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        .arcade-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .arcade-card {
+            background: #181822;
+            border: 3px solid #000;
+            box-shadow: 6px 6px 0px #00ffff;
+            padding: 25px;
+            position: relative;
+            transition: all 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+
+        .arcade-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 10px 10px 0px #ff007a;
+            border-color: #ff007a;
+        }
+
+        .arcade-card h3 {
+            font-family: 'Arial Black', sans-serif;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #ff007a;
+            padding-bottom: 5px;
+        }
+
+        /* Heavy Interaction Buttons */
+        .brutal-btn {
             display: inline-block;
             background: #ff007a;
             color: #fff;
-            padding: 10px 20px;
+            padding: 12px 24px;
             text-transform: uppercase;
-            font-weight: bold;
+            font-family: 'Impact', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
             text-decoration: none;
-            border: 2px solid #000;
-            box-shadow: 3px 3px 0px #000;
-            margin-top: 15px;
-            font-size: 0.9rem;
+            border: 3px solid #000;
+            box-shadow: 4px 4px 0px #000;
+            transition: transform 0.1s, box-shadow 0.1s;
         }
 
-        .btn:hover {
+        .brutal-btn:hover {
             background: #00ffff;
             color: #000;
-            box-shadow: 3px 3px 0px #ff007a;
+            box-shadow: 4px 4px 0px #ff007a;
         }
 
-        .links-container a {
+        .link-accent {
             color: #00ffff;
             text-decoration: none;
             font-weight: bold;
         }
-        .links-container a:hover { text-decoration: underline; }
+        .link-accent:hover { text-decoration: underline; color: #ff007a; }
 
         footer {
-            margin-top: 60px;
+            margin-top: 80px;
             text-align: center;
-            font-size: 0.8rem;
-            color: #71717a;
+            font-size: 0.75rem;
+            color: #52525b;
+            border-top: 2px dashed #1c1c24;
+            padding-top: 20px;
         }
     </style>
 </head>
@@ -153,61 +220,76 @@
 
     <div class="portfolio-container">
         
-        <!-- Header Section -->
+        <!-- Main Top Header Area -->
         <header>
             <h1>Danielle Machluf</h1>
-            <div class="subtitle">Game Developer & Technical Artist</div>
+            <div class="subtitle">Game Dev // Technical Artist</div>
         </header>
 
-        <!-- Profile Detail Blocks -->
-        <div class="main-layout">
-            <div class="card notebook-card">
-                <h2>About Me</h2>
-                <p>I am a developer focused on technical art and gameplay systems. I specialize in bridging the gap between artistic vision and engine implementation, building custom shaders, and optimization pipelines.</p>
-                <p>Looking to collaborate on fast-paced, highly stylized indie titles or technical pipelines.</p>
+        <!-- Notebook Unit Frame -->
+        <div class="notebook-wrapper">
+            
+            <!-- Visual Ring Spine component -->
+            <div class="binder-spine">
+                <div class="binder-hole"></div>
+                <div class="binder-hole"></div>
+                <div class="binder-hole"></div>
+                <div class="binder-hole"></div>
+                <div class="binder-hole"></div>
             </div>
 
-            <div class="card">
-                <h2>Skill Matrix</h2>
-                <p><strong>Engines:</strong> Unity, Unreal Engine</p>
-                <p><strong>Tech Art:</strong> Shaders (HLSL/Shader Graph), VFX, Lighting</p>
-                <p><strong>Languages:</strong> C#, C++, Python</p>
-                <div class="links-container">
-                    <p>📂 <a href="https://johno.re" target="_blank">Itch.io Profile</a></p>
-                    <p>✉️ <a href="mailto:your-email@domain.com">Reach out via Email</a></p>
-                </div>
-                <a href="#" class="btn">Download CV</a>
+            <!-- Page 1: Profile -->
+            <div class="journal-column">
+                <span class="sticker-badge">System.Log</span>
+                <h2>About Me</h2>
+                <p>I build custom shaders, tools, and visual production pipelines that pull artistic intention directly into real-time environments.</p>
+                <p>Specialized in deep styling pipelines, interactive performance optimizations, and breaking standard engine render rules.</p>
+                <br>
+                <a href="#" class="brutal-btn">Get my CV</a>
             </div>
+
+            <!-- Page 2: Core Matrix -->
+            <div class="journal-column">
+                <h2>Tool Matrix</h2>
+                <p><strong>Runtimes:</strong> Unity // Unreal Engine</p>
+                <p><strong>Technical Art:</strong> HLSL, Shader Graph, Custom Render Passes, VFX Graph</p>
+                <p><strong>Codebases:</strong> C#, C++, Python</p>
+                <hr style="border: 1px dashed rgba(255,0,122,0.2); margin: 20px 0;">
+                <p>🛰️ Net: <a href="https://johno.re" target="_blank" class="link-accent">Itch.io Hub</a></p>
+                <p>✉️ Comms: <a href="mailto:your-email@domain.com" class="link-accent">Direct Mail</a></p>
+            </div>
+
         </div>
 
-        <!-- Portfolio Showcase -->
+        <!-- System Showcase Content Grid -->
         <section>
-            <h2 style="color: #00ffff; margin-bottom: 20px;">Selected Projects</h2>
-            <div class="projects-grid">
+            <div class="showcase-title">// Core_Projects</div>
+            
+            <div class="arcade-grid">
                 
-                <div class="project-card">
+                <div class="arcade-card">
                     <h3>The Secrets Of The Hollow Woods</h3>
-                    <p>An immersive atmosphere-driven title highlighting dynamic post-processing pipelines and interactive foliage shading rules.</p>
-                    <a href="#" class="links-container">View Project &rarr;</a>
+                    <p>Atmospheric system tracking complex screen-space post-processing layers and custom vertex displacement fields for interactive environments.</p>
+                    <a href="#" class="link-accent">Initialize Source &rarr;</a>
                 </div>
 
-                <div class="project-card">
+                <div class="arcade-card">
                     <h3>SkyBloom</h3>
-                    <p>A stylized arcade flight game testing boundary vertex displacements, custom cloud rendering steps, and high-speed particle simulation maps.</p>
-                    <a href="#" class="links-container">View Project &rarr;</a>
+                    <p>Stylized physics flight array managing complex procedural cloud rendering buffers and particle array matrix variations.</p>
+                    <a href="#" class="link-accent">Initialize Source &rarr;</a>
                 </div>
 
-                <div class="project-card">
+                <div class="arcade-card">
                     <h3>Sweet Escape</h3>
-                    <p>A pastel-cyber neon action puzzle platformer incorporating hard-surface toon shaders, outline computations, and procedural physics mechanics.</p>
-                    <a href="#" class="links-container">View Project &rarr;</a>
+                    <p>Neon toon platformer logic featuring explicit custom outline shaders, look-up texture color tracking, and physical surface materials.</p>
+                    <a href="#" class="link-accent">Initialize Source &rarr;</a>
                 </div>
 
             </div>
         </section>
 
         <footer>
-            © 2026 Danielle Machluf • Crafted via GitHub Pages
+            © 2026 DANIELLE MACHLUF • DESIGN BYPASSED VIA GITHUB PAGES
         </footer>
 
     </div>
