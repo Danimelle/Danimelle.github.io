@@ -26,12 +26,45 @@
             position: relative;
         }
 
-        /* Glitch Asymmetric Brutalist Headers */
+        /* Glitch Asymmetric Brutalist Header with Profile Slot */
         header {
             position: relative;
             margin-bottom: 50px;
             border-bottom: 4px dashed #8d36f0;
             padding-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+        }
+
+        /* Profile Image Slot (Sticker Aesthetic) */
+        .profile-avatar {
+            width: 90px;
+            height: 90px;
+            background: #17142b;
+            border: 3px solid #00ffff;
+            box-shadow: 4px 4px 0px #8d36f0;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .profile-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-text {
+            flex-grow: 1;
         }
 
         h1 {
@@ -43,6 +76,10 @@
             line-height: 0.9;
             letter-spacing: -1px;
             text-shadow: 4px 4px 0px #8d36f0, -3px -3px 0px #00ffff;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.8rem; }
         }
 
         .subtitle {
@@ -59,7 +96,7 @@
             box-shadow: 4px 4px 0px #000;
         }
 
-        /* The Ring-Binder Notebook Layout - Fixed Overflow */
+        /* The Ring-Binder Notebook Layout */
         .notebook-wrapper {
             display: grid;
             grid-template-columns: 40px 1fr 1fr;
@@ -102,7 +139,7 @@
 
         /* Inner Journal Columns */
         .journal-column {
-            padding: 50px 30px 40px 30px; /* Added top padding to prevent badge cutoff */
+            padding: 50px 30px 40px 30px;
             background: #12101e;
             position: relative;
         }
@@ -121,7 +158,7 @@
             letter-spacing: 1px;
         }
 
-        /* Floating Sticker / Badge elements - Fixed Cutoff Context */
+        /* Floating Sticker / Badge elements */
         .sticker-badge {
             position: absolute;
             top: -15px;
@@ -159,7 +196,7 @@
             background: #141224;
             border: 3px solid #000;
             box-shadow: 6px 6px 0px #00ffff;
-            padding: 0; /* Clear padding to align the thumbnail flush */
+            padding: 0;
             overflow: hidden;
             position: relative;
             transition: all 0.2s cubic-bezier(0.18, 0.89, 0.32, 1.28);
@@ -247,8 +284,14 @@
         
         <!-- Main Top Header Area -->
         <header>
-            <h1>Danielle Machluf</h1>
-            <div class="subtitle">Game Dev // Technical Artist</div>
+            <div class="profile-avatar">
+                <!-- Replace src with your local profile picture link (e.g. assets/avatar.jpg) -->
+                <img src="assets/profile.jpg" alt="Danielle Machluf Avatar">
+            </div>
+            <div class="header-text">
+                <h1>Danielle Machluf</h1>
+                <div class="subtitle">Game Dev // Technical Artist</div>
+            </div>
         </header>
 
         <!-- Notebook Unit Frame -->
@@ -281,27 +324,3 @@
                 <p><strong>Codebases:</strong> C#, C++, Python</p>
                 <hr style="border: 1px dashed rgba(141, 54, 240, 0.2); margin: 20px 0;">
                 <p>🛰️ Hub: <a href="#" target="_blank" class="link-accent">Itch.io Profile</a></p>
-                <p>✉️ Comms: <a href="mailto:your-email@domain.com" class="link-accent">Direct Mail</a></p>
-            </div>
-
-        </div>
-
-        <!-- Selected Core Projects Showcase Section -->
-        <section>
-            <div class="showcase-title">// Core_Projects</div>
-            
-            <div class="arcade-grid">
-                
-                <div class="arcade-card">
-                    <div class="gif-thumbnail">
-                        <!-- Replace src path with your local game gif pathway -->
-                        <img src="assets/hollow-woods.gif" alt="Hollow Woods Gameplay Preview">
-                    </div>
-                    <div class="card-content">
-                        <h3>The Secrets Of The Hollow Woods</h3>
-                        <p>Atmospheric system tracking screen-space post-processing layers and custom vertex displacement fields.</p>
-                        <a href="#" class="link-accent">View Project &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="arcade-card">
