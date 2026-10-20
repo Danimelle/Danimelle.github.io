@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Danielle Machluf | Game Developer &amp; Technical Artist</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danielle Machluf | Game Developer &amp; Technical Artist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <!--
-  HOW TO EDIT THIS PAGE (you only ever change the words and file names):
+  HOW TO EDIT THIS PAGE (you only change words and file names):
   1. Text: change the words between the tags, e.g. <h3>YOUR TITLE</h3>.
   2. Images: put pictures/GIFs in a folder called "assets" and change the file name
      after "url(assets/" in each card. Until the file exists you see a colored placeholder.
-  3. Links: change the web address inside href="..." (Itch.io, email, CV).
+  3. Floating shapes: add your own illustrations (transparent PNGs) named
+     assets/deco-1.png ... assets/deco-5.png. Missing ones show colored shapes instead.
+  4. Filter: on each game card, data-platform can be "pc", "mobile", or "pc mobile" for both.
+  5. Links: change the web address inside href="..." (Itch.io, email, CV).
 -->
 <nav>
   <a href="#projects" class="on">Projects</a>
+  <a href="#tools">Shaders &amp; Tools</a>
+  <a href="#jams">Game Jams</a>
   <a href="#about">About</a>
   <a href="https://itch.io" target="_blank" rel="noopener">Itch.io</a>
   <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
 </nav>
 
 <header class="hero">
-  <div class="deco d1" aria-hidden="true"></div><div class="deco d2" aria-hidden="true"></div>
-  <div class="deco d3" aria-hidden="true"></div><div class="deco d4" aria-hidden="true"></div>
-  <div class="deco d5" aria-hidden="true"></div>
-  <h1>Danielle<br>Machluf</h1>
+  <img class="deco d1" src="assets/deco-1.png" alt="" aria-hidden="true" onerror="this.classList.add('shape');this.removeAttribute('src')">
+  <img class="deco d2" src="assets/deco-2.png" alt="" aria-hidden="true" onerror="this.classList.add('shape');this.removeAttribute('src')">
+  <img class="deco d3" src="assets/deco-3.png" alt="" aria-hidden="true" onerror="this.classList.add('shape');this.removeAttribute('src')">
+  <img class="deco d4" src="assets/deco-4.png" alt="" aria-hidden="true" onerror="this.classList.add('shape');this.removeAttribute('src')">
+  <img class="deco d5" src="assets/deco-5.png" alt="" aria-hidden="true" onerror="this.classList.add('shape');this.removeAttribute('src')">
+  <div class="avatar" role="img" aria-label="Photo of Danielle"></div>
+  <h1>Danielle Machluf</h1>
   <div class="tape">Game Developer &amp; Technical Artist</div>
   <div class="btns">
     <a class="btn" href="#about">About me</a>
@@ -39,30 +47,63 @@
 <main class="wrap">
   <section id="projects">
     <h2>Projects</h2>
+    <div class="filters">
+      <button data-filter="all" aria-pressed="true">All</button>
+      <button data-filter="mobile" aria-pressed="false">Mobile</button>
+      <button data-filter="pc" aria-pressed="false">Web &amp; PC</button>
+    </div>
+    <p class="empty-note" id="none" hidden>Nothing here yet.</p>
     <div class="grid">
-
       <!-- PROJECT CARD: copy a whole <a>...</a> block to add another project -->
-      <a class="card" href="hollow-woods.html" style="--accent:#FF5FA2">
+      <a class="card" href="hollow-woods.html" style="--accent:#FF5FA2" data-platform="pc">
         <div class="thumb" style="--img:url(assets/hollow-woods.gif);--fb:linear-gradient(160deg,#2A1450,#7A2E5E)"></div>
         <div class="info"><h3>The Secrets Of The Hollow Woods</h3><p>A mystery point and click game</p><span class="chip">View project</span></div>
       </a>
 
-      <a class="card" href="skybloom.html" style="--accent:#5CC8FF">
+      <a class="card" href="skybloom.html" style="--accent:#5CC8FF" data-platform="mobile">
         <div class="thumb" style="--img:url(assets/skybloom.gif);--fb:linear-gradient(180deg,#BFE8FF,#5CC8FF)"></div>
         <div class="info"><h3>SkyBloom</h3><p>A cozy pixel-art game</p><span class="chip">View project</span></div>
       </a>
 
-      <a class="card" href="sweet-escape.html" style="--accent:#FFD23F">
+      <a class="card" href="sweet-escape.html" style="--accent:#FFD23F" data-platform="pc">
         <div class="thumb" style="--img:url(assets/sweet-escape.gif);--fb:linear-gradient(180deg,#16072E,#FF5FA2)"></div>
         <div class="info"><h3>Sweet Escape</h3><p>A sweets-inspired platformer</p><span class="chip">View project</span></div>
       </a>
+    </div>
+  </section>
 
+  <section id="tools">
+    <h2>Shaders &amp; Tools</h2>
+    <div class="grid">
+      <a class="card" href="shader-example.html" style="--accent:#4FE3C1">
+        <div class="thumb" style="--img:url(assets/shader-example.gif);--fb:linear-gradient(135deg,#4FE3C1,#24104A)"></div>
+        <div class="info"><h3>Shader Example</h3><p>PLACEHOLDER: one line about this shader</p><span class="chip">View project</span></div>
+      </a>
+
+      <a class="card" href="tool-example.html" style="--accent:#C9A7FF">
+        <div class="thumb" style="--img:url(assets/tool-example.gif);--fb:linear-gradient(135deg,#C9A7FF,#24104A)"></div>
+        <div class="info"><h3>Tool Example</h3><p>PLACEHOLDER: one line about this tool</p><span class="chip">View project</span></div>
+      </a>
+    </div>
+  </section>
+
+  <section id="jams">
+    <h2>Game Jams</h2>
+    <div class="grid">
+      <a class="card" href="jam-1.html" style="--accent:#FF8A4C">
+        <div class="thumb" style="--img:url(assets/jam-1.gif);--fb:linear-gradient(135deg,#FF8A4C,#7A2E5E)"></div>
+        <div class="info"><h3>Game Jam Project 1</h3><p>PLACEHOLDER: one line about this game</p><span class="chip">View project</span></div>
+      </a>
+
+      <a class="card" href="jam-2.html" style="--accent:#5CC8FF">
+        <div class="thumb" style="--img:url(assets/jam-2.gif);--fb:linear-gradient(135deg,#5CC8FF,#24104A)"></div>
+        <div class="info"><h3>Game Jam Project 2</h3><p>PLACEHOLDER: one line about this game</p><span class="chip">View project</span></div>
+      </a>
     </div>
   </section>
 
   <section id="about">
     <div class="about">
-      <div class="avatar" role="img" aria-label="Photo of Danielle"></div>
       <div class="bubble">
         <h2>Hi!</h2>
         <p>PLACEHOLDER: Write a few friendly sentences about yourself here. What you make, what you love working on, and what kind of team you want to join.</p>
@@ -77,5 +118,17 @@
 </main>
 
 <footer>© 2026 Danielle Machluf</footer>
+
+<script>
+  (function(){
+    var btns=document.querySelectorAll('.filters button'),cards=document.querySelectorAll('#projects .card'),none=document.getElementById('none');
+    btns.forEach(function(b){b.addEventListener('click',function(){
+      btns.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
+      var f=b.dataset.filter,n=0;
+      cards.forEach(function(c){var ok=f==='all'||(' '+c.dataset.platform+' ').indexOf(' '+f+' ')>-1;c.hidden=!ok;if(ok)n++});
+      none.hidden=n>0;
+    })});
+  })();
+</script>
 </body>
 </html>
