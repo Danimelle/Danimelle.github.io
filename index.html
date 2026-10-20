@@ -7,7 +7,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=7">
+  <link rel="stylesheet" href="style.css?v=8">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <!--
@@ -40,7 +41,7 @@
     <a class="btn" href="#projects">Games</a>
     <a class="btn mint" href="#tools">Shaders &amp; Tools</a>
     <a class="btn yellow" href="#jams">Game Jams</a>
-    <a class="btn sky" href="art.html">Art &amp; Design</a>
+    <a class="btn sky" href="#misc">Art &amp; Design</a>
   </div>
 </header>
 
@@ -126,6 +127,23 @@
     <img class="deco d10" src="assets/deco-10.png" alt="" aria-hidden="true" onerror="this.classList.add('shape');this.removeAttribute('src')">
   </section>
 
+  <section id="misc">
+    <h2>Misc.</h2>
+    <div class="grid">
+      <!-- COLLAGE CARD: the four pictures come from assets/art-1 ... art-4 (the same files as the Art & Design page).
+           To use one collage image you made instead: delete the four <span class="pic"> lines, remove "collage"
+           from the class, and add style="--img:url(assets/misc.jpg)" to that thumb div. -->
+      <a class="card" href="art.html" style="--accent:#C9A7FF">
+        <div class="thumb collage" aria-hidden="true">
+          <span class="pic p1"><img data-name="assets/art-1" alt=""></span>
+          <span class="pic p2"><img data-name="assets/art-2" alt=""></span>
+          <span class="pic p3"><img data-name="assets/art-3" alt=""></span>
+          <span class="pic p4"><img data-name="assets/art-4" alt=""></span>
+        </div>
+        <div class="info"><h3>Art &amp; Design</h3><p>PLACEHOLDER: one line about your art and design work</p><span class="chip">View collection</span></div>
+      </a>
+    </div>
+  </section>
 </main>
 
 <footer>© 2026 Danielle Machluf</footer>
@@ -140,6 +158,20 @@
       none.style.display=n>0?'none':'block';
     })});
   })();
+</script>
+<script>
+  document.querySelectorAll('.card,.tile,section h2,.bubble').forEach(function(el){el.classList.add('reveal')});
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    els.forEach(function(el){io.observe(el)});
+  }else{els.forEach(function(el){el.classList.add('in')})}
+  document.querySelectorAll('.pic img[data-name]').forEach(function(img){
+    var ext=['jpg','png','gif','webp','jpeg'],i=0;
+    img.onerror=next;
+    function next(){if(i>=ext.length){img.style.display='none';return}img.src=img.dataset.name+'.'+ext[i++]}
+    next();
+  });
 </script>
 </body>
 </html>
