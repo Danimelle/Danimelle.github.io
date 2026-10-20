@@ -1,4 +1,4 @@
-/* ===== Danielle portfolio style, version 6 ===== */
+/* ===== Danielle portfolio style, version 7 ===== */
 /* ===== COLORS: change these and the whole site changes ===== */
 :root{
   --bg:#24104A; --ink:#16072E; --cream:#FFF4E0;
@@ -148,14 +148,30 @@ nav a:last-child{margin-right:auto}
 .proj .frame+h1+.tape{margin:22px 0 0}
 section{position:relative}
 section>*:not(.deco){position:relative;z-index:2}
-.d6{width:84px;height:84px;top:10px;right:6%;animation-delay:-5s}
-.d7{width:72px;height:72px;top:34px;right:8%;animation-delay:-2.5s}
-.d8{width:80px;height:80px;top:34px;right:12%;animation-delay:-1.5s}
-.d9{width:76px;height:76px;top:34px;right:9%;rotate:12deg;animation-delay:-3.5s}
-.d10{width:90px;height:90px;bottom:20px;left:6%;animation-delay:-4.5s}
+
+/* ===== Added in version 7: shapes down the sides of the page ===== */
+html{overflow-x:clip}
+.shape.d4{background:var(--lilac)}
+.shape.d5{background:var(--yellow)}
+.d6{width:120px;height:120px;top:-6px;right:calc(50% - 50vw + 28px);animation-delay:-5s}
+.d11{width:190px;height:190px;top:34%;left:calc(50% - 50vw - 70px);rotate:-12deg;animation-delay:-1s}
+.d7{width:290px;height:160px;top:10%;right:calc(50% - 50vw - 100px);rotate:8deg;animation-delay:-2.5s}
+.d12{width:140px;height:140px;top:56%;left:calc(50% - 50vw + 16px);animation-delay:-3s}
+.d8{width:120px;height:120px;top:8%;left:calc(50% - 50vw + 36px);animation-delay:-1.5s}
+.d13{width:230px;height:130px;bottom:8%;right:calc(50% - 50vw - 80px);rotate:-10deg;animation-delay:-4s}
+.d9{width:150px;height:150px;top:6%;right:calc(50% - 50vw + 22px);animation-delay:-3.5s}
+.d14{width:250px;height:140px;bottom:16%;left:calc(50% - 50vw - 90px);rotate:10deg;animation-delay:-2s}
+.d10{width:100px;height:100px;bottom:28px;right:calc(50% - 50vw + 90px);animation-delay:-4.5s}
 .shape.d6{background:var(--yellow);clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
-.shape.d7{background:var(--pink);border-radius:50%}
-.shape.d8{background:var(--mint);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
-.shape.d9{background:var(--sky);border-radius:20px}
+.shape.d11{background:var(--pink);border-radius:26px}
+.shape.d7{background:var(--sky);border-radius:26px}
+.shape.d12{background:var(--mint);border-radius:50%}
+.shape.d8{background:var(--lilac);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.shape.d13{background:var(--pink);border-radius:26px}
+.shape.d9{background:var(--yellow);border-radius:50%}
+.shape.d14{background:var(--mint);border-radius:26px}
 .shape.d10{background:var(--lilac);border-radius:50%}
-@media (max-width:700px){.d6,.d7,.d8,.d9,.d10{width:48px;height:48px}}
+@media (max-width:700px){
+  .d6,.d7,.d8,.d9,.d10,.d11,.d12,.d13,.d14{scale:.55}
+  .d4{top:24px;left:auto;right:9%;width:80px;height:80px}
+}
