@@ -1,153 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danielle Machluf | Portfolio Hub</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danielle Machluf | Game Developer &amp; Technical Artist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="portfolio-container">
-        <!-- Top Branding Header -->
-        <header>
-            <div class="profile-avatar">
-                <img src="assets/profile.jpg" alt="Danielle Machluf Avatar">
-            </div>
-            <div class="header-text">
-                <h1>Danielle Machluf</h1>
-                <div class="subtitle">Game Dev // Technical Artist</div>
-            </div>
-        </header>
+<!--
+  HOW TO EDIT THIS PAGE (you only ever change the words and file names):
+  1. Text: change the words between the tags, e.g. <h3>YOUR TITLE</h3>.
+  2. Images: put pictures/GIFs in a folder called "assets" and change the file name
+     after "url(assets/" in each card. Until the file exists you see a colored placeholder.
+  3. Links: change the web address inside href="..." (Itch.io, email, CV).
+-->
+<nav>
+  <a href="#projects" class="on">Projects</a>
+  <a href="#about">About</a>
+  <a href="https://itch.io" target="_blank" rel="noopener">Itch.io</a>
+  <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
+</nav>
 
-        <!-- Intro & Experience Column Split -->
-        <div class="intro-grid">
-            <div class="intro-section">
-                <h2>About Me</h2>
-                <p class="bio-text">I build custom shaders, tools, and visual production pipelines that pull artistic intention directly into real-time environments.</p>
-                <div class="matrix-links">
-                    <a href="#" target="_blank">Itch.io Hub</a>
-                    <a href="mailto:your-email@domain.com">Email Me</a>
-                </div>
-            </div>
-            <div class="intro-section">
-                <h2>Experience</h2>
-                <div class="timeline-block">
-                    <div class="timeline-node">
-                        <div class="node-meta">
-                            <span class="company-tag">STUDIO PIPELINE OMEGA</span>
-                            <span class="date-tag">2025 - PRES</span>
-                        </div>
-                        <h4>Senior Technical Artist</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
+<header class="hero">
+  <div class="deco d1" aria-hidden="true"></div><div class="deco d2" aria-hidden="true"></div>
+  <div class="deco d3" aria-hidden="true"></div><div class="deco d4" aria-hidden="true"></div>
+  <div class="deco d5" aria-hidden="true"></div>
+  <h1>Danielle<br>Machluf</h1>
+  <div class="tape">Game Developer &amp; Technical Artist</div>
+  <div class="btns">
+    <a class="btn" href="#about">About me</a>
+    <a class="btn mint" href="https://itch.io" target="_blank" rel="noopener">Itch.io</a>
+  </div>
+</header>
 
-        <section>
-            <div class="showcase-title">Core Projects</div>
-            
-            <!-- Portfolio Showcase & Filtering placed underneath the title header -->
-            <div class="filter-terminal">
-                <button class="filter-btn active" onclick="filterSelection('all')">ALL</button>
-                <button class="filter-btn" onclick="filterSelection('shaders')">SHADERS / TECH ART</button>
-                <button class="filter-btn" onclick="filterSelection('gameplay')">GAMEPLAY CODE</button>
-            </div>
+<main class="wrap">
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid">
 
-            <!-- Arcade Grid view layout -->
-            <div class="arcade-grid">
-                <div class="arcade-card filter-item shaders">
-                    <div class="gif-thumbnail">
-                        <img src="assets/hollow-woods.gif" alt="Hollow Woods Preview">
-                    </div>
-                    <div class="card-content">
-                        <h3>The Secrets Of The Hollow Woods</h3>
-                        <p>Atmospheric system tracking screen-space post-processing layers.</p>
-                        <a href="hollow-woods.html" class="link-accent">View Project Page &rarr;</a>
-                    </div>
-                </div>
+      <!-- PROJECT CARD: copy a whole <a>...</a> block to add another project -->
+      <a class="card" href="hollow-woods.html" style="--accent:#FF5FA2">
+        <div class="thumb" style="--img:url(assets/hollow-woods.gif);--fb:linear-gradient(160deg,#2A1450,#7A2E5E)"></div>
+        <div class="info"><h3>The Secrets Of The Hollow Woods</h3><p>A mystery point and click game</p><span class="chip">View project</span></div>
+      </a>
 
-                <div class="arcade-card filter-item gameplay">
-                    <div class="gif-thumbnail">
-                        <img src="assets/skybloom.gif" alt="SkyBloom Preview">
-                    </div>
-                    <div class="card-content">
-                        <h3>SkyBloom</h3>
-                        <p>Stylized physics flight array managing complex procedural cloud rendering.</p>
-                        <a href="skybloom.html" class="link-accent">View Project Page &rarr;</a>
-                    </div>
-                </div>
+      <a class="card" href="skybloom.html" style="--accent:#5CC8FF">
+        <div class="thumb" style="--img:url(assets/skybloom.gif);--fb:linear-gradient(180deg,#BFE8FF,#5CC8FF)"></div>
+        <div class="info"><h3>SkyBloom</h3><p>A cozy pixel-art game</p><span class="chip">View project</span></div>
+      </a>
 
-                <div class="arcade-card filter-item shaders">
-                    <div class="gif-thumbnail">
-                        <img src="assets/sweet-escape.gif" alt="Sweet Escape Preview">
-                    </div>
-                    <div class="card-content">
-                        <h3>Sweet Escape</h3>
-                        <p>Neon toon platformer logic featuring explicit custom outline shaders and look-up texture color tracking.</p>
-                        <a href="sweet-escape.html" class="link-accent">View Project Page &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <a class="card" href="sweet-escape.html" style="--accent:#FFD23F">
+        <div class="thumb" style="--img:url(assets/sweet-escape.gif);--fb:linear-gradient(180deg,#16072E,#FF5FA2)"></div>
+        <div class="info"><h3>Sweet Escape</h3><p>A sweets-inspired platformer</p><span class="chip">View project</span></div>
+      </a>
 
-        <!-- Game Jam Archive System Row -->
-        <section>
-            <div class="showcase-title" style="color: #8d36f0;">Game Jam Archive</div>
-            <div class="arcade-grid">
-                <div class="arcade-card filter-item shaders">
-                    <div class="gif-thumbnail">
-                        <img src="assets/jam-project1.gif" alt="Game Jam Project 1 Preview">
-                    </div>
-                    <div class="card-content">
-                        <h3>Jam Project Alpha</h3>
-                        <p>Built in 48 hours. Explores unique render pipelines and procedural asset distribution maps under tight time limits.</p>
-                        <a href="jam-alpha.html" class="link-accent">View Prototype &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="arcade-card filter-item gameplay">
-                    <div class="gif-thumbnail">
-                        <img src="assets/jam-project2.gif" alt="Game Jam Project 2 Preview">
-                    </div>
-                    <div class="card-content">
-                        <h3>Jam Project Beta</h3>
-                        <p>Built in 72 hours. Focused on screen-space outline look-development styling structures and runtime pixel filters.</p>
-                        <a href="jam-beta.html" class="link-accent">View Prototype &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            © 2026 DANIELLE MACHLUF • POWERED VIA GITHUB PAGES SYSTEM
-        </footer>
     </div>
-    
-    <script>
-        function filterSelection(c) {
-            var x = document.getElementsByClassName("filter-item");
-            if (c == "all") c = "";
-            for (var i = 0; i < x.length; i++) {
-                x[i].classList.remove("show");
-                if (x[i].className.indexOf(c) > -1) {
-                    x[i].classList.add("show");
-                }
-            }
-        }
-        filterSelection("all");
+  </section>
 
-        // Highlights the clicked button
-        var btnContainer = document.querySelector(".filter-terminal");
-        var btns = btnContainer.getElementsByClassName("filter-btn");
-        for (var i = 0; i < btns.length; i++) {
-            btns[i].addEventListener("click", function(){
-                var current = btnContainer.getElementsByClassName("active");
-                if (current.length > 0) {
-                    current[0].classList.remove("active");
-                }
-                this.classList.add("active");
-            });
-        }
-    </script>
+  <section id="about">
+    <div class="about">
+      <div class="avatar" role="img" aria-label="Photo of Danielle"></div>
+      <div class="bubble">
+        <h2>Hi!</h2>
+        <p>PLACEHOLDER: Write a few friendly sentences about yourself here. What you make, what you love working on, and what kind of team you want to join.</p>
+        <p>PLACEHOLDER: Add one more line about the tools you use.</p>
+        <div class="btns">
+          <a class="btn yellow" href="mailto:your-email@example.com">Email me</a>
+          <a class="btn mint" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Danielle Machluf</footer>
 </body>
 </html>
