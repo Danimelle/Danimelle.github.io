@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body>
 <!--
@@ -21,10 +21,10 @@
   5. Links: change the web address inside href="..." (Itch.io, email, CV).
 -->
 <nav>
-  <a href="#projects" class="on">Projects</a>
+  <a href="#about" class="on">About</a>
+  <a href="#projects">Projects</a>
   <a href="#tools">Shaders &amp; Tools</a>
   <a href="#jams">Game Jams</a>
-  <a href="#about">About</a>
   <a href="https://itch.io" target="_blank" rel="noopener">Itch.io</a>
   <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
 </nav>
@@ -35,16 +35,32 @@
   <img class="deco d3" src="assets/deco-3.png" alt="" aria-hidden="true" onerror="this.classList.add('shape');this.removeAttribute('src')">
   <img class="deco d4" src="assets/deco-4.png" alt="" aria-hidden="true" onerror="this.classList.add('shape');this.removeAttribute('src')">
   <img class="deco d5" src="assets/deco-5.png" alt="" aria-hidden="true" onerror="this.classList.add('shape');this.removeAttribute('src')">
-  <div class="avatar" role="img" aria-label="Photo of Danielle"></div>
   <h1>Danielle Machluf</h1>
   <div class="tape">Game Developer &amp; Technical Artist</div>
   <div class="btns">
-    <a class="btn" href="#about">About me</a>
-    <a class="btn mint" href="https://itch.io" target="_blank" rel="noopener">Itch.io</a>
+    <a class="btn" href="#projects">Games</a>
+    <a class="btn mint" href="#tools">Shaders &amp; Tools</a>
+    <a class="btn yellow" href="#jams">Game Jams</a>
+    <a class="btn sky" href="https://itch.io" target="_blank" rel="noopener">Itch.io</a>
   </div>
 </header>
 
 <main class="wrap">
+  <section id="about">
+    <div class="about">
+      <div class="avatar" role="img" aria-label="Photo of Danielle"></div>
+      <div class="bubble">
+        <h2>Hi!</h2>
+        <p>PLACEHOLDER: Write a few friendly sentences about yourself here. What you make, what you love working on, and what kind of team you want to join.</p>
+        <p>PLACEHOLDER: Add one more line about the tools you use.</p>
+        <div class="btns">
+          <a class="btn yellow" href="mailto:your-email@example.com">Email me</a>
+          <a class="btn mint" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="projects">
     <h2>Projects</h2>
     <div class="filters">
@@ -52,7 +68,7 @@
       <button data-filter="mobile" aria-pressed="false">Mobile</button>
       <button data-filter="pc" aria-pressed="false">Web &amp; PC</button>
     </div>
-    <p class="empty-note" id="none" hidden>Nothing here yet.</p>
+    <p class="empty-note" id="none" style="display:none">Nothing here yet.</p>
     <div class="grid">
       <!-- PROJECT CARD: copy a whole <a>...</a> block to add another project -->
       <a class="card" href="hollow-woods.html" style="--accent:#FF5FA2" data-platform="pc">
@@ -102,19 +118,6 @@
     </div>
   </section>
 
-  <section id="about">
-    <div class="about">
-      <div class="bubble">
-        <h2>Hi!</h2>
-        <p>PLACEHOLDER: Write a few friendly sentences about yourself here. What you make, what you love working on, and what kind of team you want to join.</p>
-        <p>PLACEHOLDER: Add one more line about the tools you use.</p>
-        <div class="btns">
-          <a class="btn yellow" href="mailto:your-email@example.com">Email me</a>
-          <a class="btn mint" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
-        </div>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer>© 2026 Danielle Machluf</footer>
@@ -125,8 +128,8 @@
     btns.forEach(function(b){b.addEventListener('click',function(){
       btns.forEach(function(x){x.setAttribute('aria-pressed',x===b)});
       var f=b.dataset.filter,n=0;
-      cards.forEach(function(c){var ok=f==='all'||(' '+c.dataset.platform+' ').indexOf(' '+f+' ')>-1;c.hidden=!ok;if(ok)n++});
-      none.hidden=n>0;
+      cards.forEach(function(c){var ok=f==='all'||(' '+c.dataset.platform+' ').indexOf(' '+f+' ')>-1;c.style.display=ok?'':'none';if(ok)n++});
+      none.style.display=n>0?'none':'block';
     })});
   })();
 </script>

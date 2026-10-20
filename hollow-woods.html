@@ -7,19 +7,19 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body style="--accent:#FF5FA2">
 <!--
   Swap the words, the file names in assets/, and the links. Anything marked PLACEHOLDER is yours to replace.
   SLIDES: each <figure> is one image or GIF, stacked at the same width like your Adobe portfolio.
-  Copy a whole <figure>...</figure> to add one, delete one to remove it. For a GIF, change .jpg to .gif in its src.
+  Copy a whole <figure>...</figure> to add one, delete one to remove it. Name your files like the data-name says (jpg, png, gif or webp all work).
 -->
 <nav>
-  <a href="index.html#projects" class="on">Projects</a>
+  <a href="index.html#about" class="on">About</a>
+  <a href="index.html#projects">Projects</a>
   <a href="index.html#tools">Shaders &amp; Tools</a>
   <a href="index.html#jams">Game Jams</a>
-  <a href="index.html#about">About</a>
   <a href="https://itch.io" target="_blank" rel="noopener">Itch.io</a>
   <a href="cv.pdf" target="_blank" rel="noopener">CV</a>
 </nav>
@@ -54,19 +54,19 @@
 
   <div class="stack">
     <figure class="slide">
-      <img src="assets/hollow-woods-1.jpg" alt="PLACEHOLDER: describe this image" loading="lazy" onerror="this.parentNode.classList.add('empty')">
+      <img data-name="assets/hollow-woods-1" alt="PLACEHOLDER: describe this image" loading="lazy">
       <figcaption>PLACEHOLDER: caption (or delete this line)</figcaption>
     </figure>
     <figure class="slide">
-      <img src="assets/hollow-woods-2.jpg" alt="PLACEHOLDER: describe this image" loading="lazy" onerror="this.parentNode.classList.add('empty')">
+      <img data-name="assets/hollow-woods-2" alt="PLACEHOLDER: describe this image" loading="lazy">
       <figcaption>PLACEHOLDER: caption (or delete this line)</figcaption>
     </figure>
     <figure class="slide">
-      <img src="assets/hollow-woods-3.jpg" alt="PLACEHOLDER: describe this image" loading="lazy" onerror="this.parentNode.classList.add('empty')">
+      <img data-name="assets/hollow-woods-3" alt="PLACEHOLDER: describe this image" loading="lazy">
       <figcaption>PLACEHOLDER: caption (or delete this line)</figcaption>
     </figure>
     <figure class="slide">
-      <img src="assets/hollow-woods-4.jpg" alt="PLACEHOLDER: describe this image" loading="lazy" onerror="this.parentNode.classList.add('empty')">
+      <img data-name="assets/hollow-woods-4" alt="PLACEHOLDER: describe this image" loading="lazy">
       <figcaption>PLACEHOLDER: caption (or delete this line)</figcaption>
     </figure>
   </div>
@@ -74,5 +74,13 @@
   <a class="next" href="skybloom.html"><span>Next</span><strong>SkyBloom</strong></a>
 </main>
 <footer>© 2026 Danielle Machluf</footer>
+<script>
+  document.querySelectorAll('img[data-name]').forEach(function(img){
+    var ext=['jpg','png','gif','webp','jpeg'],i=0;
+    img.onerror=next;
+    function next(){if(i>=ext.length){img.parentNode.classList.add('empty');return}img.src=img.dataset.name+'.'+ext[i++]}
+    next();
+  });
+</script>
 </body>
 </html>

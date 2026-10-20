@@ -1,3 +1,4 @@
+/* ===== Danielle portfolio style, version 4 ===== */
 /* ===== COLORS: change these and the whole site changes ===== */
 :root{
   --bg:#24104A; --ink:#16072E; --cream:#FFF4E0;
@@ -25,7 +26,7 @@ nav a.on{background:var(--yellow);color:var(--ink)}
 .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
 .btn.mint{background:var(--mint)} .btn.yellow{background:var(--yellow)}
 .tape{display:inline-block;padding:10px 24px;background:var(--cream);color:var(--ink);border:3px solid var(--ink);font-weight:600;font-size:clamp(17px,2.4vw,24px);transform:rotate(-2deg);box-shadow:4px 4px 0 var(--ink)}
-h2{font-family:var(--display);font-weight:400;font-size:clamp(36px,6vw,60px);line-height:1.2;margin:0 0 32px;text-decoration:underline wavy var(--accent) 4px;text-underline-offset:12px;text-decoration-skip-ink:none}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(36px,6vw,60px);line-height:1.2;margin:0 0 32px;width:fit-content;max-width:100%;padding:0 .2em;background:linear-gradient(transparent 60%,var(--accent) 60%,var(--accent) 92%,transparent 92%)}
 section{padding:clamp(40px,7vw,80px) 0}
 
 /* ===== Home: top of the page ===== */
@@ -93,13 +94,6 @@ footer{text-align:center;padding:36px 20px 48px;opacity:.8;font-size:15px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 /* ===== Added: hero photo, filters, image stack ===== */
-.hero .avatar{width:clamp(110px,15vw,160px);margin:0 auto 22px}
-.bubble{max-width:780px}
-.bubble::before{display:none}
-.filters{display:flex;gap:10px;flex-wrap:wrap;margin:-8px 0 32px}
-.filters button{font:inherit;font-weight:600;cursor:pointer;padding:8px 20px;border-radius:999px;border:3px solid var(--ink);background:var(--cream);color:var(--ink);box-shadow:3px 3px 0 var(--ink)}
-.filters button:hover{transform:translate(-1px,-1px)}
-.filters button[aria-pressed=true]{background:var(--yellow)}
 .card[hidden]{display:none}
 .empty-note{font-size:20px;margin:0 0 20px}
 .stack{display:flex;flex-direction:column;gap:clamp(24px,4vw,44px);margin-top:20px}
@@ -108,3 +102,12 @@ footer{text-align:center;padding:36px 20px 48px;opacity:.8;font-size:15px}
 .slide figcaption{margin-top:14px;font-size:16px;opacity:.85}
 .slide.empty img{display:none}
 .slide.empty::before{content:"Image or GIF goes here";display:grid;place-items:center;aspect-ratio:16/9;border:4px dashed var(--accent);border-radius:24px;color:var(--accent);font-weight:600;font-size:20px}
+
+/* ===== Added in version 4: centered nav, filter buttons, sky button ===== */
+nav a:first-child{margin-left:auto}
+nav a:last-child{margin-right:auto}
+.btn.sky{background:var(--sky)}
+.filters{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:-8px 0 36px}
+.filters button{font:inherit;font-weight:600;font-size:16px;cursor:pointer;padding:10px 24px;border-radius:999px;border:3px solid var(--ink);background:var(--cream);color:var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.filters button:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.filters button[aria-pressed=true]{background:var(--pink)}
