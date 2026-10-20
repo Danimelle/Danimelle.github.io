@@ -1,4 +1,4 @@
-/* ===== Danielle portfolio style, version 4 ===== */
+/* ===== Danielle portfolio style, version 5 ===== */
 /* ===== COLORS: change these and the whole site changes ===== */
 :root{
   --bg:#24104A; --ink:#16072E; --cream:#FFF4E0;
@@ -26,7 +26,7 @@ nav a.on{background:var(--yellow);color:var(--ink)}
 .btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
 .btn.mint{background:var(--mint)} .btn.yellow{background:var(--yellow)}
 .tape{display:inline-block;padding:10px 24px;background:var(--cream);color:var(--ink);border:3px solid var(--ink);font-weight:600;font-size:clamp(17px,2.4vw,24px);transform:rotate(-2deg);box-shadow:4px 4px 0 var(--ink)}
-h2{font-family:var(--display);font-weight:400;font-size:clamp(36px,6vw,60px);line-height:1.2;margin:0 0 32px;width:fit-content;max-width:100%;padding:0 .2em;background:linear-gradient(transparent 60%,var(--accent) 60%,var(--accent) 92%,transparent 92%)}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(36px,6vw,60px);line-height:1.2;margin:0 0 32px;text-decoration:underline wavy var(--accent) 4px;text-underline-offset:12px;text-decoration-skip-ink:none}
 section{padding:clamp(40px,7vw,80px) 0}
 
 /* ===== Home: top of the page ===== */
@@ -37,7 +37,7 @@ section{padding:clamp(40px,7vw,80px) 0}
 .deco{position:absolute;z-index:1;pointer-events:none;animation:bob 6s ease-in-out infinite;object-fit:contain;display:block}
 .d1{width:210px;height:210px;top:-60px;left:-50px;transform:rotate(-14deg)}
 .d2{width:300px;height:170px;top:12%;right:-90px;transform:rotate(10deg);animation-delay:-2s}
-.d3{width:150px;height:150px;bottom:-40px;left:9%;animation-delay:-4s}
+.d3{width:150px;height:150px;bottom:8%;left:7%;animation-delay:-4s}
 .d4{width:96px;height:96px;top:22%;left:15%;animation-delay:-1s}
 .d5{width:110px;height:110px;bottom:9%;right:12%;animation-delay:-3s}
 /* Colored shapes only show when your illustration file is missing */
@@ -49,7 +49,7 @@ section{padding:clamp(40px,7vw,80px) 0}
 @keyframes bob{50%{translate:0 -12px}}
 
 /* ===== Project cards (home) ===== */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:clamp(26px,3.5vw,42px)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,290px),1fr));gap:clamp(26px,3.5vw,42px)}
 .card{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:var(--cream);border:3px solid var(--ink);border-radius:22px;overflow:hidden;box-shadow:8px 8px 0 var(--accent);transition:transform .2s,box-shadow .2s}
 .card:nth-child(odd){transform:rotate(-1.2deg)}
 .card:nth-child(even){transform:rotate(1deg)}
@@ -107,7 +107,21 @@ footer{text-align:center;padding:36px 20px 48px;opacity:.8;font-size:15px}
 nav a:first-child{margin-left:auto}
 nav a:last-child{margin-right:auto}
 .btn.sky{background:var(--sky)}
-.filters{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:-8px 0 36px}
+.filters{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-start;margin:-8px 0 32px}
 .filters button{font:inherit;font-weight:600;font-size:16px;cursor:pointer;padding:10px 24px;border-radius:999px;border:3px solid var(--ink);background:var(--cream);color:var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s}
 .filters button:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
 .filters button[aria-pressed=true]{background:var(--pink)}
+
+/* ===== Added in version 5: Art & Design page tiles ===== */
+.tile{margin:0;display:flex;flex-direction:column;background:var(--cream);color:var(--ink);border:3px solid var(--ink);border-radius:22px;overflow:hidden;box-shadow:8px 8px 0 var(--accent)}
+.tile:nth-child(4n+1){--accent:var(--pink)}
+.tile:nth-child(4n+2){--accent:var(--sky)}
+.tile:nth-child(4n+3){--accent:var(--yellow)}
+.tile:nth-child(4n+4){--accent:var(--mint)}
+.tile a{display:block;border-bottom:3px solid var(--ink)}
+.tile img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--cream)}
+.tile figcaption{padding:16px 20px 20px}
+.tile h3{font-family:var(--display);font-weight:400;font-size:24px;line-height:1.15;margin:0 0 6px}
+.tile p{margin:0;font-size:16px;color:#4A3A66}
+.tile.empty img{display:none}
+.tile.empty a::before{content:"Image goes here";display:grid;place-items:center;aspect-ratio:4/3;background:var(--accent);font-weight:600}
